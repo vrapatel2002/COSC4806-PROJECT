@@ -19,3 +19,8 @@ body {
 .ratings li {
   margin-bottom: 5px;
 }
+
+.rating{
+  display: inline-block;
+  border: solid grey;
+}

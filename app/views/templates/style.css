@@ -1,0 +1,18 @@
+
+.navbar {
+    background-color: rgb(3, 37, 65) !important;
+}
+
+.navbar .navbar-nav .nav-link,
+.navbar .navbar-brand {
+    color: white !important;
+}
+
+.navbar .navbar-nav .nav-link.active {
+    background-color: rgb(3, 37, 65) !important;
+}
+
+.main{
+    padding-left:5%;
+    padding-top:3%;
+}
