@@ -1,16 +1,31 @@
-class Searches extends Controller {
+<?php
 
-  public function index(){
-    $this->view('search/index');
-  
-    public function search($para =''){
-      if($_REQUEST['movie']){
-        $searchterm = $_REQUEST['movie'];
-        header('Location: /search/results?movie=' . $searchterm);
-        die;
-      }
-    echo $para;
+class Search extends Controller {
+
+    public function index(){
+        $this->view('search/index');
     }
-  
-  }
+
+    // public function movie($param=''){
+    //     if($_REQUEST['search']){
+    //         $searchTerm = $_REQUEST['search'];
+    //         header('Location: /search/movie/' . $searchTerm);
+    //         die;
+    //     }
+        
+    //     $this->view('omdb/index',['name' => $param]);
+    // }
+    
+    public function movie($param=''){
+        if($_REQUEST['search']){
+            $searchTerm = $_REQUEST['search'];
+            header('Location: /search/movie/' . $searchTerm);
+            die;
+        }
+
+        $omdbApi = $this->model('Api');
+        $movieDetails = $omdbApi->getMovieDetails($param);
+
+        $this->view('search/movie',['name' => $movieDetails]);
+    }
 }
