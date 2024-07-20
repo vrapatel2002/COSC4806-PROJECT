@@ -1,26 +1,19 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 20px;
-}
-.movie-details {
-  display: flex;
-  flex-direction: row;
-}
-.poster {
-  margin-right: 20px;
-}
-.details {
-  max-width: 600px;
-}
-.ratings {
-  list-style-type: none;
-  padding: 0;
-}
-.ratings li {
-  margin-bottom: 5px;
+.main{
+    background-image: url('<?php echo $movie['Poster']; ?>');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+    position:absoulte;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:-1;
 }
 
-.rating{
-  display: inline-block;
-  border: solid grey;
+.movie-details{
+    position: absolute;
+    z-index:1;
 }

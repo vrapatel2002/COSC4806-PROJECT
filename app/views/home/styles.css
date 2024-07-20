@@ -1,0 +1,12 @@
+.background {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    z-index: -1;
+}
+
+.d-flex.vh-100.position-relative .container.my-auto {
+    z-index: 1;
+}
