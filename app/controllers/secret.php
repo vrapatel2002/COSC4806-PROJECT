@@ -16,6 +16,7 @@ class Secret extends Controller {
           )
         )
       );
+      
       $json = json_encode($data);
       $ch = curl_init($query_url);
       curl_setopt($ch, CURLOPT_HTTPHEADER,array('Content-Type: application/json'));
