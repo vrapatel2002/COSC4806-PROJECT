@@ -17,7 +17,7 @@ class API {
         return $movie;
     }
 
-    public function getMovieReviews() {
+    public function getMovieReviews($param) {
         $query_url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=".$_ENV['GEMINI_KEY'];
 
           $data = array(
@@ -25,7 +25,7 @@ class API {
               array(
                 "role" => "user",
                 "parts" => array(
-                  "text"=>"Give me 3 review of movie run(2020)"
+                  "text"=> " Read this description and give one line of max 7 word to describe that movie".$param
 
                 )
               )
@@ -40,7 +40,12 @@ class API {
           curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
           $response = curl_exec($ch);
 
-        return $response;
+          $data = json_decode($response, true);
+
+
+          $text = $data['candidates'][0]['content']['parts'][0]['text'];
+
+        return $text;
 
 }
 

@@ -2,7 +2,7 @@
 
 class Secret extends Controller {
 
-    public function index() {		
+    public function index($param) {		
       $query_url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=".$_ENV['GEMINI_KEY'];
 
       $data = array(
@@ -10,7 +10,7 @@ class Secret extends Controller {
           array(
             "role" => "user",
             "parts" => array(
-              "text"=>"Give me list of 10 random movies name"
+              "text"=>" Read this description and give one line of max 7 word to describe that movie".$param['Plot']
 
             )
           )
@@ -27,9 +27,11 @@ class Secret extends Controller {
       if(curl_errno($ch)){
         echo 'Error:' . curl_error($ch);
       }
+      
       echo "<pre>";
       echo $response;
       echo "</pre>";
+      
       die;
     }
 

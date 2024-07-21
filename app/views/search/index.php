@@ -1,8 +1,15 @@
+<link rel="stylesheet" href="/app/views/search/styles-index.css">
 <?php require_once 'app/views/templates/header.php' ?>
 
+<div class="background-container-index">
+    <div class="background-image-index"></div>
+</div>
+
 <div class="d-flex vh-100">
-    <div class="container my-auto mt-5" style="margin-top: 20px;">
-        <div class="page-header text-left mb-4" id="banner">
+    
+    <div class="container-index my-auto mt-5" style="margin-top: 20px;">
+        
+        <div class="page-header text-center mb-4" id="banner">
             <div class="row">
                 <div class="col-lg-12">
                     <h1>Welcome</h1>
@@ -11,7 +18,7 @@
             </div>
         </div>
 
-        <div class="row justify-content-left">
+        <div class="row justify-content-center">
             <div class="col-lg-6">
                 <form action="/search/movie" method="post">
                     <fieldset>
@@ -23,7 +30,9 @@
                 </form>
             </div>
         </div>
+        
     </div>
+    
 </div>
 
 <?php require_once 'app/views/templates/footer.php' ?>
