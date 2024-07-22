@@ -1,22 +1,13 @@
 body {
     font-size: 16px;
+    color: #fff;
 }
 
 .background-container {
     position: relative;
-    margin-top:50px;
+    margin-top: 50px;
     width: 100%;
-    height: 70%;
-}
-
-.top-part {
-    width: 100%;
-    height: 50px; /* Adjust the height as needed */
-    background: transparent;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1; /* Ensure this is above the blurred part */
+    height: 70vh; /* Adjusted for better view */
 }
 
 .background-image {
@@ -25,18 +16,12 @@ body {
     background-position: center;
     box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5); 
     width: 100%;
-    filter: blur(6px);
+    filter: blur(8px); /* Increased blur for a more pronounced effect */
     position: absolute;
     height: 100%;
     top: 0;
     left: 0;
     z-index: -1;
-}
-
-.release_date {
-    font-size: 28px; /* Adjust font size as needed */
-    color: white; /* Ensure text color is white */
-    font-weight: lighter; /* Set font weight to normal if different from h2 */
 }
 
 .movie-details {
@@ -45,26 +30,72 @@ body {
     color: white; /* Ensures text color contrasts against the background */
 }
 
+.poster img {
+    border-radius: 0.5rem; /* Rounded corners for the poster image */
+}
+
+.title h2 {
+    font-size: 2.5rem; /* Adjusted for emphasis */
+    font-weight: 700;
+}
+
+.release_date {
+    font-size: 1.25rem;
+    color: #ddd; 
+    font-weight: 300; 
+}
+
 .facts {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    font-size: 0.9rem; 
 }
 
 .facts .dot {
-    font-size: 16px;
+    font-size: 1rem;
     margin: 0 5px;
     color: #fff;  
 }
 
-.tagline {
-    margin-bottom: 0.5rem; /* Adjust this value as needed */
+.header_info h3 {
+    margin-top: 1rem;
+    font-size: 1.75rem;
 }
 
-@media (max-width: 767.98px) {
-    .details {
-        margin-left: 0;
-    }
+.plot {
+    margin-top: 0.5rem;
 }
 
-/*  CSS FOR INDEX.PHP  */
+.star {
+    font-size: 2rem;
+    cursor: pointer;
+    color: lightgray;
+}
+
+.star.filled {
+    color: gold;
+}
+
+.star-rating {
+    font-size: 2rem;
+    cursor: pointer;
+    color: lightgray;
+}
+
+.star-rating .star.filled {
+    color: gold;
+}
+
+.nav-pills .nav-link.active {
+    background-color: #fff;
+    color: #007bff;
+}
+
+.nav-pills .nav-link {
+    color: #fff;
+}
+
+.form-control {
+    border-radius: 0.5rem; /* Rounded corners for the textarea */
+}

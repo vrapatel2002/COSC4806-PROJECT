@@ -15,13 +15,15 @@ class Search extends Controller {
 
         $omdbApi = $this->model('Api');
         $movieDetails = $omdbApi->getMovieDetails($param);
-        
-        $plot = $movieDetails['Plot'];
 
         $geminiApi = $this->model('Api');
-        $describeMovie = $geminiApi->getMovieReviews($plot);
+        $describeMovie = $geminiApi->getMovieOverview($movieDetails['Title']);
         
         $this->view('search/movie',['name' => $movieDetails, 'describe' => $describeMovie]);
     }
-    
+
+    public function getReviews($movie_Rating,$movie_title){
+        $geminiApi = $this->model('Api');
+        $describeMovie = $geminiApi->getMovieOverview($movie_Rating,$movie_title);
+    }
 }

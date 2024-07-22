@@ -5,6 +5,7 @@
     <link rel="icon" href="/favicon.png">
     <link rel="stylesheet" href="/app/views/templates/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>COSC 4806</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width">
@@ -31,7 +32,18 @@
                     </li>
                 </ul>
                 <div class="d-flex">
-                    <a class="btn btn-primary" href="/login">Login</a>
+                    <?php if (isset($_SESSION['auth'])): ?>
+                        <a class="btn btn-outline-secondary" href="/profile">
+                            <i class="fas fa-user"></i> Profile
+                        </a>
+                        <a class="btn btn-danger ms-2" href="/logout">
+                            <i class="fas fa-sign-out-alt"></i> Logout
+                        </a>
+                    <?php else: ?>
+                        <a class="btn btn-primary" href="/login">
+                            <i class="fas fa-sign-in-alt"></i> Login
+                        </a>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
