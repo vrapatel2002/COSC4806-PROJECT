@@ -31,16 +31,20 @@
                         <a class="nav-link">TV Shows</a>
                     </li>
                 </ul>
-                <div class="d-flex">
+                <div class="d-flex align-items-center">
+                    
+                        <a class="btn btn-outline-primary rounded-pill ms-2" href="/search">Search</a>
+
+
                     <?php if (isset($_SESSION['auth'])): ?>
-                        <a class="btn btn-outline-secondary" href="/profile">
+                        <a class="btn btn-outline-secondary rounded-pill ms-2" href="/profile">
                             <i class="fas fa-user"></i> Profile
                         </a>
-                        <a class="btn btn-danger ms-2" href="/logout">
+                        <a class="btn btn-danger rounded-pill ms-2" href="/logout">
                             <i class="fas fa-sign-out-alt"></i> Logout
                         </a>
                     <?php else: ?>
-                        <a class="btn btn-primary" href="/login">
+                        <a class="btn btn-primary rounded-pill ms-2" href="/login">
                             <i class="fas fa-sign-in-alt"></i> Login
                         </a>
                     <?php endif; ?>

@@ -3,18 +3,12 @@
 class Movie{
 
     public function saveReview($movie_title, $rating, $review) {
-        $db = db_connect();
-
-        if($_SESSION['username']){
-            $username = $_SESSION['username'];
-             $statement = $db->prepare("INSERT INTO Rating_Review (movie_title, rating, review, created_at) VALUES (:movie_title, :rating, :review, NOW())");
-        }
-        
+        $db = db_connect();          
         $statement = $db->prepare("INSERT INTO Rating_Review (movie_title, rating, review, created_at) VALUES (:movie_title, :rating, :review, NOW())");
+        
         $statement->bindParam(':movie_title', $movie_title);
         $statement->bindParam(':rating', $rating);
         $statement->bindParam(':review', $review);
-        // $statement->bindParam(':user_id', $user_id);
         $statement->execute();
 
       return $db->lastInsertId();

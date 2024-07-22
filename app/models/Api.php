@@ -13,7 +13,6 @@ class API {
         $phpObj = json_decode($json);
         $movie =  (array) $phpObj;
 
-        // Return the result as an associative array
         return $movie;
     }
 

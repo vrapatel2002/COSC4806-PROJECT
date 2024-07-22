@@ -103,6 +103,8 @@
         <div class="tab-pane fade show active" id="submit-review" role="tabpanel" aria-labelledby="home-tab2">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
+                    <h1></h1>
+                    <br><br><br>
                     <h3 class="text">Rate and Review</h3>
                     <div class="star-rating" id="starRating">
                         <span class="star" data-value="1">&#9733;</span>
@@ -124,6 +126,7 @@
             </div>
         </div>
     </div>
+
     <script src="/app/views/search/script-movie.js"></script>
 </body>
 </html>

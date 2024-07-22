@@ -1,13 +1,13 @@
-/* General styles */
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
 }
 
-/* Background container styling */
+
 .background-container {
     position: relative;
-    height: 100vh; /* Full viewport height */
+    height: 100vh; 
     overflow: hidden;
 }
 
@@ -21,7 +21,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    filter: brightness(60%); /* Slightly darken background for better contrast */
+    filter: brightness(60%); 
     z-index: -1;
 }
 
@@ -30,8 +30,8 @@ body {
 }
 
 h1 {
-    font-size: 3rem; /* Larger heading for better impact */
-    font-weight: 700; /* Bold heading */
+    font-size: 3rem; 
+    font-weight: 700; 
 }
 
 .btn-primary {
